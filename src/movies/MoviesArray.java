@@ -1,10 +1,8 @@
 package movies;
 
 public class MoviesArray {
-    private static Movie[] movieList;
-
-    public MoviesArray(){
-        movieList = new Movie[]{
+    public static Movie[] findAll() {
+        return new Movie[]{
                 new Movie("Citizen Kane", "drama"),
                 new Movie("Casablanca", "drama"),
                 new Movie("The Godfather", "drama"),
@@ -106,22 +104,5 @@ public class MoviesArray {
                 new Movie("Guess Who's Coming To Dinner", "drama"),
                 new Movie("Yankee Doodle Dandy", "musical")
         };
-    }
-
-    public MoviesArray(Movie[] movieList) {
-        this.movieList = movieList;
-    }
-
-    public static void addMovie(Movie movie) {
-        Movie[] newMovieList = new Movie[movieList.length + 1];
-        for(int i = 0; i < movieList.length; i++) {
-            newMovieList[i] = movieList[i];
-        }
-        newMovieList[newMovieList.length - 1] = movie;
-        movieList = newMovieList;
-    }
-
-    public static Movie[] findAll() {
-        return movieList;
     }
 }
